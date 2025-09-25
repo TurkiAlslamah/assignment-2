@@ -44,7 +44,7 @@ assignment-1/
 
 1. Clone repository
 ```bash
-git clone https://github.com/turkialslamah/#
+git chttps://github.com/TurkiAlslamah/assignment-1.git
 ```
 
 2. Navigate to folder
