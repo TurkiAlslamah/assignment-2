@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turki Alslamah - Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <h2>Turki Alslamah</h2>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button class="theme-toggle" id="theme-toggle">🌙</button></li>
+            </ul>
+            <button class="hamburger" id="hamburger">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1 id="greeting">Good morning!</h1>
+            <h2>I'm <span class="highlight">Turki Alslamah</span></h2>
+            <p class="tagline" id="tagline">Software Engineering Student | Full-Stack Developer | Problem Solver</p>
+            <p>Building real-world applications that combine usability with solid technical foundations.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn primary">View My Work</a>
+                <a href="#contact" class="btn secondary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I'm <strong>Turki Alslamah</strong>, a junior Software Engineering student at <strong>KFUPM</strong> with a strong interest in building real-world applications that combine usability with solid technical foundations.</p>
+            <p>My work spans from <strong>database-driven systems</strong> to <strong>full-stack applications</strong>, with hands-on experience in Java, SQL, and modern web technologies. Passionate about problem-solving and entrepreneurship, I focus on turning academic projects into scalable, practical solutions.</p>
+            
+            <div class="skills">
+                <div class="skill">Java</div>
+                <div class="skill">SQL & Databases</div>
+                <div class="skill">Web Technologies</div>
+                <div class="skill">Full-Stack Development</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets\images\FBS-Web-screen03.jpg" alt="Facility Reservation System">
+                    </div>
+                    <div class="project-content">
+                        <h3>Facility Reservation System</h3>
+                        <p>Developed a full system enabling faculty, staff, and students to reserve classrooms, labs, and gyms under defined rules. Implemented features such as double-booking prevention, gender-based restrictions, event organization, automated cancellation emails, and centralized reservation management.</p>
+                        <div class="tech-tags">
+                            <span>Java</span>
+                            <span>Database Systems</span>
+                            <span>Email Integration</span>
+                            <span>Software Engineering</span>
+                        </div>
+                        <div class="project-info">
+                            <small>Introduction to Software Engineering Course - Mar 2024</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets\images\Dashbaord.png" alt="University Tournament System">
+                    </div>
+                    <div class="project-content">
+                        <h3>University Tournament System</h3>
+                        <p>Built an SQL-based application for managing university sports tournaments. Features included team creation, captain assignments, player approvals, and match result updates via triggers. Guests could view match details, team info, and leaderboards. Added automated email reminders and designed normalized relational schemas with constraints.</p>
+                        <div class="tech-tags">
+                            <span>SQL</span>
+                            <span>Database Design</span>
+                            <span>Triggers</span>
+                            <span>Normalization</span>
+                        </div>
+                        <div class="project-info">
+                            <small>Database Systems Course - Mar 2025</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>📧 turki.busnow@gmail.com</p>
+                    <p>📍 Dammam, Eastern Province, Saudi Arabia</p>
+                    <p>🎓 King Fahd University of Petroleum & Minerals</p>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <div>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error" id="name-error"></span>
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error" id="email-error"></span>
+                    </div>
+                    <div>
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <span class="error" id="message-error"></span>
+                    </div>
+                    <button type="submit" class="btn primary">Send Message</button>
+                    <div class="form-status" id="form-status"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 By Turki Alslamah. Built with passion and modern web technologies.</p>
+            <a href="https://github.com/turkialslamah" target="_blank">GitHub</a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
