@@ -53,7 +53,7 @@ git clone https://github.com/turkialslamah/assignment-2
 
 2. Navigate to folder
 ```bash
-cd assignment-1
+cd assignment-2
 ```
 
 3. Open in browser
