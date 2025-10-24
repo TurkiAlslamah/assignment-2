@@ -59,6 +59,7 @@ cd assignment-2
 3. Open in browser
 ```bash
 # Option 1: Double-click index.html
+```
 
 ## Sections
 
