@@ -6,19 +6,23 @@ A responsive personal portfolio website showcasing my Software Engineering proje
 
 ## Features
 
-- Responsive design for all devices
-- Dark/Light theme toggle
-- Smooth scrolling navigation
-- Typing animation effect
-- Contact form with validation
-- Mobile hamburger menu
-
+- ✅ Responsive design for all devices
+- ✅ Dark/Light theme toggle with localStorage
+- ✅ Smooth scrolling navigation
+- ✅ Typing animation effect
+- ✅ Contact form with real-time validation
+- ✅ Mobile hamburger menu
+- ✅ **NEW:** GitHub API integration with live repository display
+- ✅ **NEW:** Error handling with loading states and retry mechanism
+- ✅ **NEW:** Dynamic content loading from external API
 ## Technologies
 
 - HTML5
 - CSS3 (Grid, Flexbox, Variables)
--  JavaScript
-- No frameworks or libraries
+- Vanilla JavaScript (ES6+)
+- GitHub REST API
+- LocalStorage API
+- No external frameworks or libraries
 
 ## Project Structure
 
@@ -44,7 +48,7 @@ assignment-1/
 
 1. Clone repository
 ```bash
-git chttps://github.com/TurkiAlslamah/assignment-1.git
+git clone https://github.com/turkialslamah/assignment-2
 ```
 
 2. Navigate to folder
@@ -58,6 +62,25 @@ cd assignment-1
 
 ## Sections
 
+## API Integration (NEW)
+
+### GitHub Repository Display
+- Fetches 6 most recent repositories from GitHub API
+- Real-time data loading with async/await
+- Comprehensive error handling:
+  - Loading states during fetch
+  - Network error detection
+  - API rate limit handling
+  - Empty state display
+  - Retry mechanism for failed requests
+
+**Endpoint:** `https://api.github.com/users/TurkiAlslamah/repos`
+
+**Features:**
+- Automatic repository sorting by last update
+- Dynamic HTML generation
+- Graceful error recovery
+- User-friendly error messages
 ### About
 - Personal introduction
 - KFUPM student information
@@ -96,9 +119,10 @@ See `docs/ai-usage-report.md` for detailed usage.
 ## Assignment Context
 
 - **Course**: Web Development Fundamentals
-- **Assignment**: Assignment 1 - Foundation & AI Integration
+- **Assignment**: Assignment 2 - Interactive Features
 - **Weight**: 2% of final grade
 - **Institution**: KFUPM
+- **Due**: Week 9
 
 ## Author
 

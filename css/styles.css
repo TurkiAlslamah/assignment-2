@@ -327,6 +327,30 @@ section h2 {
     margin-bottom: 1rem;
     color: var(--text-light);
 }
+.projects-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.project-card {
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--surface-color);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+  transition: 0.3s;
+  
+
+  
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-color);
+  
+}
+
 
 .contact-form {
     background: var(--background-color);

@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setupMobileMenu();
     setupSmoothScroll();
     setupContactForm();
+    loadGitHubProjects();
 });
 
 // Theme Toggle
@@ -95,6 +96,71 @@ function setupTypingEffect() {
     type();
 }
 
+// GitHub API with Error Handling
+async function loadGitHubProjects() {
+    const username = "TurkiAlslamah";
+    const container = document.getElementById("github-projects");
+    
+    // Show loading state
+    container.innerHTML = `
+        <div style="grid-column: 1/-1; text-align: center; padding: 2rem;">
+            <p style="font-size: 1.2rem; color: var(--text-light);">⏳ Loading projects from GitHub...</p>
+        </div>
+    `;
+    
+    try {
+        const res = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`);
+        
+        // Check if response is ok
+        if (!res.ok) {
+            throw new Error(`GitHub API returned status ${res.status}`);
+        }
+        
+        const repos = await res.json();
+        
+        // Check for empty state
+        if (!repos || repos.length === 0) {
+            container.innerHTML = `
+                <div style="grid-column: 1/-1; text-align: center; padding: 2rem;">
+                    <p style="font-size: 1.2rem; color: var(--text-light);">📭 No projects found.</p>
+                </div>
+            `;
+            return;
+        }
+        
+        // Success - Display projects
+        container.innerHTML = repos.map(repo => `
+            <div class="project-card">
+                <h3>${repo.name}</h3>
+                <p>${repo.description ? repo.description : "No description available."}</p>
+                <div style="margin-top: 1rem;">
+                    <a href="${repo.html_url}" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: 500;">
+                        🔗 View on GitHub
+                    </a>
+                </div>
+            </div>
+        `).join("");
+        
+    } catch (error) {
+        // Error handling
+        console.error('GitHub API Error:', error);
+        
+        container.innerHTML = `
+            <div style="grid-column: 1/-1; text-align: center; padding: 2rem;">
+                <p style="font-size: 1.2rem; color: #ef4444; margin-bottom: 1rem;">
+                    ❌ Oops! Couldn't load GitHub projects.
+                </p>
+                <p style="color: var(--text-light); margin-bottom: 1.5rem;">
+                    This might be due to network issues or API rate limits.
+                </p>
+                <button onclick="loadGitHubProjects()" class="btn primary">
+                    🔄 Try Again
+                </button>
+            </div>
+        `;
+    }
+}
+
 // Mobile Menu
 function setupMobileMenu() {
     hamburger.addEventListener('click', () => {
@@ -137,7 +203,7 @@ function setupSmoothScroll() {
     });
 }
 
-// Contact Form
+// Contact Form - ALREADY HAS GOOD ERROR HANDLING ✅
 function setupContactForm() {
     contactForm.addEventListener('submit', handleSubmit);
     
@@ -163,7 +229,7 @@ function handleSubmit(e) {
     isValid = validateInput(message) && isValid;
     
     if (isValid) {
-        // Simulate form submission
+        // Simulate form submission with loading state
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
@@ -175,6 +241,7 @@ function handleSubmit(e) {
             submitBtn.disabled = false;
             
             // Clear any remaining error styling
+            const inputs = contactForm.querySelectorAll('input, textarea');
             inputs.forEach(input => clearError(input));
         }, 2000);
     }
